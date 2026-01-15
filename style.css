@@ -652,17 +652,77 @@ footer {
 
 @media (max-width: 480px) {
     header {
-        padding: 0.8rem 15px;
+        padding: 0.8rem 10px;
     }
 
     .logo-text {
-        display: flex !important;
-        /* Force visibility */
-        text-align: center;
+        font-size: 0.95rem;
+        /* Slightly smaller to fit S23 width */
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100dvh;
+        padding-top: 80px;
+        align-items: stretch;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "text text"
+            "dan erv";
+        gap: 0;
+        height: 100%;
+        align-items: flex-end;
+    }
+
+    .hero-content {
+        grid-area: text;
+        padding: 0 10px;
+        z-index: 10;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .hero-candidate.daniel {
+        grid-area: dan;
+    }
+
+    .hero-candidate.ervin {
+        grid-area: erv;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-candidate img {
+        max-height: 40vh;
+        width: 120%;
+        /* Scale up slightly for detail */
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    }
+
+    .hero-candidate.daniel img {
+        margin-right: -20%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-candidate.ervin img {
+        margin-left: -20%;
+        position: relative;
+        z-index: 1;
     }
 
     .candidate-info h2 {
