@@ -47,6 +47,50 @@ h4 {
     letter-spacing: -1px;
 }
 
+/* Social Bar */
+.top-social-bar {
+    background: var(--primary-dark);
+    color: white;
+    padding: 8px 5%;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.top-social-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.top-social-bar a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.top-social-bar i {
+    width: 18px;
+    height: 18px;
+}
+
+.top-social-bar a:hover {
+    color: var(--white);
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
 /* Header */
 header {
     background: rgba(255, 255, 255, 0.95);
@@ -56,7 +100,8 @@ header {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: 0;
+    top: 48px;
+    /* Adjusted contextually */
     z-index: 1000;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -115,10 +160,27 @@ nav ul {
     font-weight: 500;
     font-size: 0.95rem;
     transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
 }
 
 .nav-link:hover {
     color: var(--primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -190,17 +252,38 @@ nav ul {
 .hero-candidate {
     display: flex;
     justify-content: center;
+    position: relative;
+    /* For absolute badge positioning */
 }
 
-.hero-candidate img {
+.hero-candidate .candidate-img {
     max-height: 85vh;
     width: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
     transition: var(--transition);
+    display: block;
 }
 
-.hero-candidate:hover img {
+.hero-candidate .candidate-badge {
+    position: absolute;
+    bottom: 30%;
+    /* Waist level on desktop */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 275px;
+    /* Increased 10% from 250px */
+    z-index: 5;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    transition: var(--transition);
+}
+
+.hero-candidate:hover .candidate-img {
     transform: scale(1.02);
+}
+
+.hero-candidate:hover .candidate-badge {
+    transform: translateX(-50%) scale(1.05);
 }
 
 .hero-content {
@@ -210,14 +293,14 @@ nav ul {
 }
 
 .hero h1 {
-    font-size: 5rem;
+    font-size: 5.5rem;
     line-height: 1;
     margin-bottom: 15px;
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero p {
-    font-size: 1.8rem;
+    font-size: 2rem;
     max-width: 800px;
     margin-bottom: 40px;
     font-weight: 300;
@@ -345,22 +428,61 @@ section {
     margin-bottom: 25px;
 }
 
+
+
 /* Gran Chaco Section */
 .chaco-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000');
+    background: linear-gradient(rgba(0, 30, 0, 0.2), rgba(0, 60, 0, 0.4)), url('assets/carlos-bru.jpg');
     background-size: cover;
     background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Moved to left */
+    text-align: left;
+    /* Aligned text to left */
+    padding: 100px 10%;
+    /* Increased left padding */
+}
+
+.chaco-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    /* slightly more blur for readability */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+}
+
+.chaco-content .slogan {
     color: var(--white);
-    text-align: center;
-    padding: 120px 10%;
+    border-color: var(--accent);
+    margin: 0 0 30px;
+    max-width: 100%;
 }
 
-.chaco-section h2 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+@media (max-width: 768px) {
+    .chaco-section {
+        min-height: 400px;
+        background-position: 35% center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .chaco-content {
+        padding: 25px;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .chaco-content .slogan {
+        margin: 0 auto 20px;
+    }
 }
 
-/* Volunteer Form */
 .voluntariado {
     background: var(--white);
     display: grid;
@@ -490,8 +612,20 @@ footer {
 
     .voluntariado {
         grid-template-columns: 1fr;
-        padding: 40px;
-        margin: 50px 5%;
+        padding: 40px 20px;
+        /* Reduced side padding for mobile */
+        margin: 50px 3%;
+        /* Use more width on mobile */
+        gap: 40px;
+    }
+
+    .voluntariado-info {
+        text-align: center;
+    }
+
+    .voluntariado-info ul {
+        display: inline-block;
+        text-align: left;
     }
 
     .hero-container {
@@ -653,6 +787,22 @@ footer {
 @media (max-width: 480px) {
     header {
         padding: 0.8rem 10px;
+        top: 32px;
+        /* Adjusted height for mobile social bar */
+    }
+
+    .top-social-bar {
+        padding: 6px 15px;
+    }
+
+    .social-label {
+        display: none;
+        /* Hide handles on mobile to save space */
+    }
+
+    .top-social-container {
+        justify-content: center;
+        gap: 30px;
     }
 
     .logo-text {
@@ -676,6 +826,24 @@ footer {
         gap: 0;
         height: 100%;
         align-items: flex-end;
+    }
+
+    .voluntariado {
+        margin: 30px 10px;
+        padding: 30px 15px;
+        border-radius: 25px;
+    }
+
+    .voluntariado-info h2 {
+        font-size: 1.8rem;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        /* Force full width within the container */
+        box-sizing: border-box;
+        /* Include padding in width calculation */
     }
 
     .hero-content {
@@ -705,24 +873,45 @@ footer {
         margin-bottom: 20px;
     }
 
-    .hero-candidate img {
-        max-height: 40vh;
+    .hero-candidate .candidate-img {
+        max-height: 50vh;
+        /* Increased from 40vh to reduce bottom space */
         width: 120%;
-        /* Scale up slightly for detail */
         object-fit: contain;
         filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
     }
 
-    .hero-candidate.daniel img {
+    .hero-candidate .candidate-badge {
+        position: absolute;
+        bottom: 2%;
+        /* Closer to bottom to use space */
+        width: 130%;
+        max-width: 180px;
+        z-index: 10;
+        top: auto;
+        /* Ensure it stays down */
+    }
+
+    .hero-candidate.daniel .candidate-img {
         margin-right: -20%;
         position: relative;
         z-index: 2;
     }
 
-    .hero-candidate.ervin img {
+    .hero-candidate.daniel .candidate-badge {
+        margin-right: -10%;
+        z-index: 10;
+    }
+
+    .hero-candidate.ervin .candidate-img {
         margin-left: -20%;
         position: relative;
         z-index: 1;
+    }
+
+    .hero-candidate.ervin .candidate-badge {
+        margin-left: -10%;
+        z-index: 10;
     }
 
     .candidate-info h2 {
