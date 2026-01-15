@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTS Tarija - Movimiento Tercer Sistema | El pueblo tiene la razón</title>
     <meta name="description"
-        content="Sitio oficial del Movimiento Tercer Sistema (MTS) en Tarija, Bolivia. Propuestas para salud, economía y educación basadas en el desarrollo regional.">
+        content="Sitio oficial del Movimiento Tercer Sistema (MTS) en Tarija. Gobernación Daniel Centeno, Alcaldía Ervin Mancilla y Gran Chaco Carlos Bru.">
     <link rel="stylesheet" href="style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,184 +14,227 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <div class="logo-container">
-            <img src="assets/logo.png" alt="MTS Logo">
-            <span class="logo-text">MTS TARIJA</span>
+            <img src="assets/logo.png" alt="MTS Logo" class="official-logo">
+            <div class="logo-text">
+                MTS Tarija <br>
+                <span>Movimiento Tercer Sistema</span>
+            </div>
         </div>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-            <i data-lucide="menu"></i>
-        </button>
         <nav id="main-nav">
             <ul>
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#inicio" class="nav-link">Inico</a></li>
+                <li><a href="#gobernacion" class="nav-link">Gobernación</a></li>
+                <li><a href="#alcaldia" class="nav-link">Alcaldía</a></li>
+                <li><a href="#chaco" class="nav-link">Gran Chaco</a></li>
                 <li><a href="#propuestas" class="nav-link">Propuestas</a></li>
-                <li><a href="#candidatos" class="nav-link">Candidatos</a></li>
-                <li><a href="#noticias" class="nav-link">Noticias</a></li>
-                <li><a href="#unete" class="btn btn-primary">Únete Hoy</a></li>
+                <li><a href="#unete" class="btn btn-primary">Voluntariado</a></li>
             </ul>
         </nav>
+        <button id="menu-toggle" class="menu-toggle">
+            <i data-lucide="menu"></i>
+        </button>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero" id="inicio">
-            <h1>Movimiento Tercer Sistema Tarija</h1>
-            <p>Construyendo un futuro próspero, transparente y desde las bases para el departamento de Tarija.</p>
-            <a href="#unete" class="btn btn-primary">Trabajemos juntos</a>
+            <h1 class="heading-font">Movimiento Tercer Sistema Tarija</h1>
+            <p>Una nueva visión para nuestro departamento</p>
+            <div class="hero-btns">
+                <a href="#propuestas" class="btn btn-accent">Conoce nuestras propuestas</a>
+            </div>
         </section>
 
-        <!-- Proposals Section -->
+        <!-- Bloque Gobernación -->
+        <section id="gobernacion">
+            <div class="candidate-block">
+                <div class="candidate-image">
+                    <img src="assets/daniel-centeno.jpg" alt="Daniel Centeno">
+                </div>
+                <div class="candidate-info">
+                    <span
+                        style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Candidato
+                        a la Gobernación</span>
+                    <h2>Ing. Daniel Centeno</h2>
+                    <p class="slogan">"Con lealtad y decisión"</p>
+                    <div class="pillars-grid">
+                        <div class="pillar-item">
+                            <i data-lucide="users"></i>
+                            <span>1. Desarrollo Humano y Justicia Social</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="trending-up"></i>
+                            <span>2. Economía Sostenible</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="map"></i>
+                            <span>3. Integración e Infraestructura</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="droplet"></i>
+                            <span>4. Agua y Medio Ambiente</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="shield-check"></i>
+                            <span>5. Autonomía y Gobernanza</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque Alcaldía -->
+        <section id="alcaldia" style="background-color: #f1f3f1;">
+            <div class="candidate-block reverse">
+                <div class="candidate-image">
+                    <img src="assets/ervin-mancilla.jpg" alt="Ervin Mancilla">
+                </div>
+                <div class="candidate-info">
+                    <span
+                        style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Candidato
+                        a la Alcaldía (Cercado)</span>
+                    <h2>Ing. Ervin Mancilla</h2>
+                    <p class="slogan">"El pueblo siempre tiene la razón"</p>
+                    <div class="axes-grid">
+                        <div class="pillar-item">
+                            <i data-lucide="layout"></i>
+                            <span>1. Tarija Ordenada y Moderna</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="lock"></i>
+                            <span>2. Tarija Digna y Segura</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="heart"></i>
+                            <span>3. Tarija Social y Solidaria</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="palmtree"></i>
+                            <span>4. Tarija Turística y Próspera</span>
+                        </div>
+                        <div class="pillar-item">
+                            <i data-lucide="building-2"></i>
+                            <span>5. Tarija Institucional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque Gran Chaco -->
+        <section id="chaco" class="chaco-section">
+            <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Líder
+                de Región Autónoma</span>
+            <h2>Carlos Bru</h2>
+            <h3>Ejecutivo del Gran Chaco</h3>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 20px auto;">Enfocados en la integración regional y el
+                desarrollo de nuestro Chaco. Tarija unida es una Tarija más fuerte.</p>
+            <a href="#unete" class="btn btn-accent" style="margin-top: 30px;">Únete a la integración</a>
+        </section>
+
+        <!-- Propuestas Clave -->
         <section id="propuestas">
-            <div class="section-title">
-                <h2>Nuestras Propuestas</h2>
-                <p>Ejes fundamentales para el progreso de nuestra región.</p>
+            <div class="proposals-title">
+                <h2 class="heading-font">Propuestas Clave</h2>
+                <p>Nuestra compromiso con el bienestar de cada tarijeño</p>
             </div>
             <div class="proposals-grid">
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="heart-pulse"></i></div>
-                    <h3>Salud Integral</h3>
-                    <p>Modernización de hospitales regionales y fortalecimiento de la atención primaria en comunidades
-                        rurales.</p>
+                <div class="proposal-card">
+                    <i data-lucide="hospital"></i>
+                    <h3>Salud</h3>
+                    <p>Hospitales equipados y atención digna sin colas.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="trending-up"></i></div>
-                    <h3>Economía Regional</h3>
-                    <p>Fomento a la industria vitivinícola y diversificación productiva para no depender solo del gas.
-                    </p>
+                <div class="proposal-card">
+                    <i data-lucide="waves"></i>
+                    <h3>Agua</h3>
+                    <p>Agua potable para todos los barrios y comunidades.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="graduation-cap"></i></div>
-                    <h3>Educación de Calidad</h3>
-                    <p>Becas para jóvenes talento y centros de innovación tecnológica en el Chaco y el Valle Central.
-                    </p>
+                <div class="proposal-card">
+                    <i data-lucide="briefcase"></i>
+                    <h3>Empleo</h3>
+                    <p>Apoyo a emprendedores y reactivación económica real.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Candidates Section -->
-        <section id="candidatos" style="background-color: #EEE;">
-            <div class="section-title">
-                <h2>Nuestros Líderes</h2>
-                <p>Gente de Tarija, trabajando por Tarija.</p>
-            </div>
-            <div class="candidates-grid">
-                <div class="candidate-item">
-                    <div class="photo-placeholder">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
-                            alt="Candidato 1">
-                    </div>
-                    <h4>Dr. Carlos Méndez</h4>
-                    <p>Líder Regional</p>
-                </div>
-                <div class="candidate-item">
-                    <div class="photo-placeholder">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
-                            alt="Candidata 2">
-                    </div>
-                    <h4>Lic. Maria Torres</h4>
-                    <p>Portavoz de Juventudes</p>
-                </div>
-                <div class="candidate-item">
-                    <div class="photo-placeholder">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
-                            alt="Candidato 3">
-                    </div>
-                    <h4>Ing. Roberto Vaca</h4>
-                    <p>Coordinador del Chaco</p>
+                <div class="proposal-card">
+                    <i data-lucide="shield-alert"></i>
+                    <h3>Seguridad</h3>
+                    <p>Barrios seguros con vigilancia y tecnología moderna.</p>
                 </div>
             </div>
         </section>
 
-        <!-- News Section -->
-        <section id="noticias">
-            <div class="section-title">
-                <h2>Actualidad de Campaña</h2>
-            </div>
-            <div class="proposals-grid">
-                <div class="card" style="text-align: left; padding: 0; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=800"
-                        style="width:100%; height:200px; object-fit:cover;" alt="Reunión">
-                    <div style="padding: 20px;">
-                        <small style="color: var(--accent);">14 Enero, 2026</small>
-                        <h4 style="margin: 10px 0; color: var(--primary);">Gran Encuentro en el Mercado Central</h4>
-                        <p style="font-size: 0.9rem;">Escuchamos las necesidades de los comerciantes y presentamos
-                            nuestro plan económico.</p>
-                    </div>
-                </div>
-                <div class="card" style="text-align: left; padding: 0; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800"
-                        style="width:100%; height:200px; object-fit:cover;" alt="Taller">
-                    <div style="padding: 20px;">
-                        <small style="color: var(--accent);">12 Enero, 2026</small>
-                        <h4 style="margin: 10px 0; color: var(--primary);">Taller de Formación Política</h4>
-                        <p style="font-size: 0.9rem;">Más de 100 jóvenes se capacitaron en las bases ideológicas del
-                            Tercer Sistema.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
+        <!-- Voluntariado -->
         <section id="unete">
-            <div class="section-title">
-                <h2>Se parte del Cambio</h2>
-                <p>Tarija nos necesita a todos. Regístrate como voluntario.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Información de Contacto</h3>
-                    <p style="margin-bottom: 10px;"><i data-lucide="map-pin"
-                            style="vertical-align: middle; margin-right: 10px;"></i> Calle Bolivar esq. Suipacha, Tarija
-                    </p>
-                    <p style="margin-bottom: 10px;"><i data-lucide="phone"
-                            style="vertical-align: middle; margin-right: 10px;"></i> +591 4 664 XXXX</p>
-                    <p style="margin-bottom: 30px;"><i data-lucide="mail"
-                            style="vertical-align: middle; margin-right: 10px;"></i> contacto@mts-tarija.org</p>
-                    <div class="social-icons" style="color: var(--primary);">
-                        <a href="#" style="color: var(--primary);"><i data-lucide="facebook"></i></a>
-                        <a href="#" style="color: var(--primary);"><i data-lucide="instagram"></i></a>
-                        <a href="#" style="color: var(--primary);"><i data-lucide="video"></i></a>
-                        <!-- TikTok placeholder -->
+            <div class="voluntariado">
+                <div class="voluntariado-info">
+                    <h2>Sé parte del cambio</h2>
+                    <p>Tarija nos necesita unidos. Tu apoyo es fundamental para construir el futuro que soñamos.</p>
+                    <div style="margin-top: 40px;">
+                        <h4 style="color: var(--primary); margin-bottom: 15px;">¿Por qué sumarte?</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 10px;"><i data-lucide="check-circle"
+                                    style="color: var(--accent); margin-right: 10px; vertical-align: middle;"></i>
+                                Participa en mesas de trabajo</li>
+                            <li style="margin-bottom: 10px;"><i data-lucide="check-circle"
+                                    style="color: var(--accent); margin-right: 10px; vertical-align: middle;"></i> Apoya
+                                en despliegue territorial</li>
+                            <li><i data-lucide="check-circle"
+                                    style="color: var(--accent); margin-right: 10px; vertical-align: middle;"></i>
+                                Difunde nuestras propuestas</li>
+                        </ul>
                     </div>
                 </div>
                 <form id="volunteer-form">
-                    <input type="text" placeholder="Nombre Completo" required>
-                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
                     <input type="tel" placeholder="Teléfono / WhatsApp" required>
-                    <textarea rows="4" placeholder="¿Cómo te gustaría ayudar?"></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar Registro</button>
+                    <textarea rows="5" placeholder="¿En qué área te gustaría colaborar?"></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Formulario</button>
                 </form>
             </div>
         </section>
     </main>
 
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/591XXXXXX" class="whatsapp-float" target="_blank">
+        <i data-lucide="message-circle"></i>
+        <span>Escríbenos</span>
+    </a>
+
     <footer>
         <div class="footer-content">
-            <div class="footer-brand">
-                <h2 style="color: var(--accent);">MTS Tarija</h2>
-                <p>Movimiento Tercer Sistema - Por una Tarija digna.</p>
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="MTS Logo" class="footer-official-logo">
+                <div class="logo-text" style="color: white; font-size: 1.8rem; margin-top: 10px;">MTS TARIJA</div>
+                <p>El pueblo siempre tiene la razón. Por una Tarija con lealtad y decisión.</p>
             </div>
-            <div class="footer-links">
-                <h4 style="margin-bottom: 15px;">Enlaces</h4>
+            <div>
+                <h4 style="margin-bottom: 20px; color: var(--accent);">Navegación</h4>
                 <ul style="list-style: none;">
-                    <li><a href="#inicio" style="color: white; text-decoration: none; opacity: 0.8;">Inicio</a></li>
+                    <li><a href="#gobernacion"
+                            style="color: white; text-decoration: none; opacity: 0.8;">Gobernación</a></li>
+                    <li><a href="#alcaldia" style="color: white; text-decoration: none; opacity: 0.8;">Alcaldía</a></li>
                     <li><a href="#propuestas" style="color: white; text-decoration: none; opacity: 0.8;">Propuestas</a>
-                    </li>
-                    <li><a href="#candidatos" style="color: white; text-decoration: none; opacity: 0.8;">Candidatos</a>
                     </li>
                 </ul>
             </div>
+            <div>
+                <h4 style="margin-bottom: 20px; color: var(--accent);">Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="music-2"></i></a> <!-- TikTok placeholder -->
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="disclaimer">
-            <p>&copy; 2026 Movimiento Tercer Sistema Tarija. Propagación para fines informativos y democráticos.
-                Transparencia MTS: Cumplimos con todas las normativas del Órgano Electoral Plurinacional.</p>
+        <div class="copyright">
+            <p>&copy; 2026 Movimiento Tercer Sistema Tarija. Propagación para fines democráticos.</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
