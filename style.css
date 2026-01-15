@@ -211,9 +211,12 @@ section {
     margin-bottom: 80px;
 }
 
-.candidate-block.reverse {
-    direction: ltr;
-    /* Reset to normal, handled by flex/grid if needed, but keeping it simple */
+.candidate-block.reverse .candidate-image {
+    order: 2;
+}
+
+.candidate-block.reverse .candidate-info {
+    order: 1;
 }
 
 .candidate-image {
@@ -532,8 +535,12 @@ footer {
 
     .candidate-block.reverse {
         display: flex;
-        flex-direction: column-reverse;
-        /* Poster on top for reversal too */
+        flex-direction: column;
+    }
+
+    .candidate-block.reverse .candidate-image,
+    .candidate-block.reverse .candidate-info {
+        order: unset;
     }
 
     .footer-content {
