@@ -495,24 +495,54 @@ footer {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-candidate {
-        display: none;
-    }
-
-    .hero-content {
-        padding-bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "content content"
+            "daniel ervin";
+        gap: 0;
+        align-items: flex-end;
         height: 100%;
     }
 
+    .hero-content {
+        grid-area: content;
+        padding-top: 60px;
+        padding-bottom: 20px;
+        align-self: flex-start;
+    }
+
+    .hero-candidate {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-candidate.daniel {
+        grid-area: daniel;
+    }
+
+    .hero-candidate.ervin {
+        grid-area: ervin;
+    }
+
+    .hero-candidate img {
+        max-height: 45vh;
+        /* Smaller on mobile */
+        mask-image: linear-gradient(to top, transparent 5%, black 40%);
+        /* Subtle fade at the bottom to blend with background if needed, or just to keep it clean */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
     .hero {
-        align-items: center;
+        align-items: stretch;
+        height: auto;
+        min-height: 90vh;
     }
 }
 
