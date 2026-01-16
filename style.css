@@ -428,58 +428,107 @@ section {
     margin-bottom: 25px;
 }
 
-
-
-/* Gran Chaco Section */
-.chaco-section {
-    background: linear-gradient(rgba(0, 30, 0, 0.2), rgba(0, 60, 0, 0.4)), url('assets/carlos-bru.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* Moved to left */
-    text-align: left;
-    /* Aligned text to left */
+/* Gran Chaco Section Redesign - No Overlap */
+.chaco-redesigned {
+    background: linear-gradient(135deg, #001e00 0%, #003310 100%);
     padding: 100px 10%;
-    /* Increased left padding */
-}
-
-.chaco-content {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
-    /* slightly more blur for readability */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 600px;
-}
-
-.chaco-content .slogan {
     color: var(--white);
-    border-color: var(--accent);
-    margin: 0 0 30px;
-    max-width: 100%;
+    overflow: hidden;
+}
+
+.chaco-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.chaco-tag {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.chaco-info h2 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.chaco-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding-left: 25px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.chaco-visual {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(201, 160, 103, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chaco-visual:hover {
+    transform: scale(1.02);
+}
+
+.chaco-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .chaco-redesigned {
+        padding: 80px 5%;
+    }
+
+    .chaco-info h2 {
+        font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .chaco-section {
-        min-height: 400px;
-        background-position: 35% center;
-        justify-content: center;
+    .chaco-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .chaco-info {
+        order: 2;
         text-align: center;
-        padding: 60px 20px;
     }
 
-    .chaco-content {
-        padding: 25px;
+    .chaco-visual {
+        order: 1;
         width: 100%;
-        max-width: 90%;
+        max-width: 100%;
+        /* Full width on mobile to show the posters clearly */
+        margin: 0 0 20px 0;
     }
 
-    .chaco-content .slogan {
-        margin: 0 auto 20px;
+    .chaco-quote {
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--accent);
+        padding-top: 20px;
+    }
+
+    .chaco-info h2 {
+        font-size: 2.2rem;
     }
 }
 
@@ -874,39 +923,40 @@ footer {
     }
 
     .hero-candidate .candidate-img {
-        max-height: 50vh;
-        /* Increased from 40vh to reduce bottom space */
-        width: 120%;
+        max-height: 48vh;
+        /* Control exacto de altura para ambos */
+        width: auto;
+        /* Dejar que el ancho sea proporcional a la altura */
         object-fit: contain;
         filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
     }
 
     .hero-candidate .candidate-badge {
         position: absolute;
-        bottom: 2%;
-        /* Closer to bottom to use space */
-        width: 130%;
-        max-width: 180px;
+        bottom: 5%;
+        width: 115%;
+        /* Reducido para evitar solapamiento excesivo */
+        max-width: 170px;
+        /* Tamaño máximo más controlado */
         z-index: 10;
         top: auto;
-        /* Ensure it stays down */
     }
 
     .hero-candidate.daniel .candidate-img {
-        margin-right: -20%;
         position: relative;
         z-index: 2;
+        margin-right: -12%;
     }
 
     .hero-candidate.daniel .candidate-badge {
-        margin-right: -10%;
+        margin-left: 10%;
         z-index: 10;
     }
 
     .hero-candidate.ervin .candidate-img {
-        margin-left: -20%;
         position: relative;
         z-index: 1;
+        margin-left: -12%;
     }
 
     .hero-candidate.ervin .candidate-badge {
